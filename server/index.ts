@@ -10,9 +10,9 @@ const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath))
 const io = soceketIO(server)
 io.on('connection', (socket:any) => {
-    console.log(`new user connected ${socket}`)
+    console.log(`new user connected`)
 })
 io.on('dicconnection', (socket:any) => {
-    console.log(`new user disconnected ${socket}`)
+    console.log(`new user disconnected `)
 })
 server.listen(port, () => console.log(`App listening on port ${port}!`)) 

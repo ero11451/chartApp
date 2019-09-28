@@ -3,19 +3,18 @@ const http = require("http")
 const express = require('express')
 const soceketIO = require("socket.io")
 const app = express()
-const server = http.createServer(app)
 const port = process.env.PORT || 3000
+
 
 const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath))
+
+const server = http.createServer(app)
 const io = soceketIO(server)
-
-
 io.on('connection', (socket:any) => {
 
    socket.on("createMessage",(message:any)=>{
-      
-         io.emit("newmessage",
+         socket.emit("newmessage",
          {
              from:message.from,
              to:message.to,

@@ -1,4 +1,4 @@
-const socket = io.connect('/');
+const socket = io.connect('/https://stormy-escarpment-09477.herokuapp.com/');
 socket.on("connect",function(){
    
    socket.emit("createMessage",{

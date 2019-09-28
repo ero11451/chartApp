@@ -1,4 +1,4 @@
-const socket = io.connect("/");
+const socket = io.connect('/');
 socket.on("connect",function(){
    
    socket.emit("createMessage",{

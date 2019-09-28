@@ -1,0 +1,16 @@
+const socket = io();
+socket.on("connect",function(){
+   console.log("this user is connected to the serve") 
+   socket.emit("createMessage",{
+      from:"ero osamuyi",
+      to:"erosamuyi@gamil.com",
+      mesasage:"this is aa messaeg form the user to the serve"
+   })
+   socket.on("newmessage",function(res){
+      console.log(res) 
+   })
+})
+socket.on("disconnect",function(){
+   console.log("this user is disconnected  to the serve yy na")
+})
+

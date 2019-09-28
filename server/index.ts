@@ -9,8 +9,21 @@ const port = process.env.PORT || 3000
 const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath))
 const io = soceketIO(server)
+
+
+
+
 io.on('connection', (socket:any) => {
-    console.log(`new user connected`)
+
+   socket.on("createMessage",(message:any)=>{  
+         io.emit("newmessage",
+         {
+             from:message.from,
+             to:message.to,
+             message:message.message
+         })
+    })
+  
 })
 io.on('dicconnection', (socket:any) => {
     console.log(`new user disconnected `)

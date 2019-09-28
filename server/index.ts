@@ -11,8 +11,6 @@ app.use(express.static(publicpath))
 const io = soceketIO(server)
 
 
-
-
 io.on('connection', (socket:any) => {
 
    socket.on("createMessage",(message:any)=>{
@@ -23,7 +21,6 @@ io.on('connection', (socket:any) => {
              to:message.to,
              message:message.message
          })
-        console.log(message)
     })
   
 })

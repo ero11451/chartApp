@@ -3,7 +3,7 @@ socket.on("connect",function(){
    
    socket.emit("createMessage",{
       from:"ero osamuyi",
-      to:"erosamuyi@gamil.com",
+      to:"erosamuyi@gamil.com",  
       mesasage:"this is aa messaeg form the user to the serve"
    })
    socket.on("newmessage",function(res){

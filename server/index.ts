@@ -12,10 +12,10 @@ app.use(express.static(publicpath))
 const server = http.createServer(app)
 const io = soceketIO(server)
 io.on('connection', (socket:any) => {
-
+// new change made to the file
    socket.on("createMessage",(message:any)=>{
          socket.emit("newmessage",
-         {
+         { 
              from:message.from,
              to:message.to,
              message:message.message

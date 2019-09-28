@@ -1,6 +1,6 @@
 const socket = io();
 socket.on("connect",function(){
-   console.log("this user is connected to the serve") 
+   
    socket.emit("createMessage",{
       from:"ero osamuyi",
       to:"erosamuyi@gamil.com",

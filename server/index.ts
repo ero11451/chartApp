@@ -15,13 +15,15 @@ const io = soceketIO(server)
 
 io.on('connection', (socket:any) => {
 
-   socket.on("createMessage",(message:any)=>{  
+   socket.on("createMessage",(message:any)=>{
+      
          io.emit("newmessage",
          {
              from:message.from,
              to:message.to,
              message:message.message
          })
+        console.log(message)
     })
   
 })

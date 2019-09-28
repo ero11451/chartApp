@@ -5,24 +5,26 @@ const soceketIO = require("socket.io")
 const app = express()
 const port = process.env.PORT || 3000
 
-// hhrjhrth
+
+
 const server = http.createServer(app)
-// const io = soceketIO(server)
-// io.on('connection', (socket:any) => {
-// // new change made to the file
-//    io.on("createMessage",(message:any)=>{
-//          socket.emit("newmessage",
-//          { 
-//              from:message.from,
-//              to:message.to,
-//              message:message.message
-//          })
-//     })
+var io = require('socket.io')(server);
+
+io.on('connection', (socket:any) => {
+// new change made to the file
+   io.on("createMessage",(message:any)=>{
+         socket.emit("newmessage",
+         { 
+             from:message.from,
+             to:message.to,
+             message:message.message
+         })
+    })
   
-// })
-// io.on('dicconnection', (socket:any) => {
-//     console.log(`new user disconnected `)
-// })
+})
+io.on('dicconnection', (socket:any) => {
+    console.log(`new user disconnected `)
+})
 const publicpath = path.join(__dirname, '../public');
 app.use(express.static(publicpath))
 

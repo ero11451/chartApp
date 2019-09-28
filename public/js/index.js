@@ -6,6 +6,7 @@ socket.on("connect",function(){
       to:"erosamuyi@gamil.com",  
       mesasage:"this is aa messaeg form the user to the serve"
    })
+   
    socket.on("newmessage",function(res){
       console.log(res) 
    })

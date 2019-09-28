@@ -1,6 +1,6 @@
 var socket = io.connect(window.location.hostname);
 socket.on("connect",function(){
-   // 
+   // kdlk
    socket.emit("createMessage",{
       from:"ero osamuyi",
       to:"erosamuyi@gamil.com",
